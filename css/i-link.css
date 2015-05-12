@@ -42,15 +42,23 @@ i-link {
     box-sizing: border-box;
 }
 
-i-link[button-style="true"].i-primary >a,
-i-link[button-style="true"].i-focussed >a {
+i-link[button-style="true"].i-primary >a >div,
+i-link[button-style="true"].i-focussed >a >div {
     background-color: rgb(0, 120, 231);
     color: #fff;
 }
 
+i-link[button-style="true"] >a {
+    display: table;
+    text-decoration: none;
+}
+
 /*csslint outline-none:false*/
 
-i-link[button-style="true"] >a {
+i-link[button-style="true"] >a >div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -58,6 +66,8 @@ i-link[button-style="true"] >a {
     -ms-user-select: none;
     user-select: none;
     position: relative;
+    display: table-cell;
+    vertical-align: middle;
     padding: 0.5em 1em;
     color: inherit; /* 1 */
     font: inherit; /* 2 */
@@ -67,7 +77,6 @@ i-link[button-style="true"] >a {
     -webkit-appearance: a; /* 2 */
     line-height: normal;
     white-space: nowrap;
-    vertical-align: baseline;
     text-align: center;
     cursor: pointer;
     -webkit-user-drag: none;
@@ -82,15 +91,14 @@ i-link[button-style="true"] >a {
     border: 1px solid #999;  /*IE 6/7/8*/
     border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
     background-color: #E6E6E6;
-    text-decoration: none;
     border-radius: 2px;
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset;
 }
 
 
-i-link[button-style="true"].i-hover >a,
-i-link[button-style="true"] >a:hover,
-i-link[button-style="true"] >a:focus {
+i-link[button-style="true"].i-hover >a >div,
+i-link[button-style="true"] >a:hover >div,
+i-link[button-style="true"] >a:focus >div {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.10)));
     background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
@@ -99,14 +107,14 @@ i-link[button-style="true"] >a:focus {
     background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
 }
 
-i-link[button-style="true"] >a:focus {
+i-link[button-style="true"] >a:focus >div {
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.6) inset;
 }
 
-i-link[button-style="true"].i-hover >a,
-i-link[button-style="true"] >a:hover,
-i-link[button-style="true"].i-hover >a:focus,
-i-link[button-style="true"] >a:hover:focus {
+i-link[button-style="true"].i-hover >a >div,
+i-link[button-style="true"] >a:hover >div,
+i-link[button-style="true"].i-hover >a:focus >div,
+i-link[button-style="true"] >a:hover:focus >div {
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.7) inset;
 }
 
@@ -114,37 +122,37 @@ i-link[button-style="true"] >a:focus {
     outline: 0;
 }
 
-i-link[button-style="true"].i-active.i-hover >a,
-i-link[button-style="true"].i-active >a:hover,
-i-link[button-style="true"].i-active.i-hover >a:focus,
-i-link[button-style="true"].i-active >a:hover:focus,
-i-link[button-style="true"].i-hover >a.pure-a-active,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
-i-link[button-style="true"] >a.pure-a-active:hover,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
-i-link[button-style="true"].i-hover >a.pure-a-active:focus,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
-i-link[button-style="true"] >a.pure-a-active:hover:focus,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
-i-link[button-style="true"] >a.pure-a-active,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
-i-link[button-style="true"] >a.pure-a-active:focus,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
-i-link[button-style="true"].i-hover >a:active,
-i-link[button-style="true"] >a:hover:active,
-i-link[button-style="true"].i-hover >a:focus:active,
-i-link[button-style="true"] >a:hover:focus:active {
+i-link[button-style="true"].i-active.i-hover >a >div,
+i-link[button-style="true"].i-active >a:hover >div,
+i-link[button-style="true"].i-active.i-hover >a:focus >div,
+i-link[button-style="true"].i-active >a:hover:focus >div,
+i-link[button-style="true"].i-hover >a.pure-a-active >div,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
+i-link[button-style="true"] >a.pure-a-active:hover >div,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
+i-link[button-style="true"].i-hover >a.pure-a-active:focus >div,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
+i-link[button-style="true"] >a.pure-a-active:hover:focus >div,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
+i-link[button-style="true"] >a.pure-a-active >div,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
+i-link[button-style="true"] >a.pure-a-active:focus >div,  /* need .pure-a-active for it gets set when "enter-pressed" on a */
+i-link[button-style="true"].i-hover >a:active >div,
+i-link[button-style="true"] >a:hover:active >div,
+i-link[button-style="true"].i-hover >a:focus:active >div,
+i-link[button-style="true"] >a:hover:focus:active >div {
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.8) inset, 0 0 6px rgba(0,0,0, 0.4) inset;
 }
 
-i-link[button-style="true"].i-disabled >a,
-i-link[button-style="true"][disabled="true"] >a,
-i-link[button-style="true"].i-disabled >a:active,
-i-link[button-style="true"][disabled="true"] >a:active,
-i-link[button-style="true"].i-disabled >a.pure-a-active, /* need .pure-a-active for it gets set when "enter-pressed" on a */
-i-link[button-style="true"][disabled="true"] >a.pure-a-active,
-i-link[button-style="true"].i-disabled.i-active >a,
-i-link[button-style="true"].i-active[disabled="true"] >a,
-i-link[button-style="true"].i-disabled >a:focus,
-i-link[button-style="true"][disabled="true"] >a:focus,
-i-link[button-style="true"].i-disabled.focussed >a,
-i-link[button-style="true"].focussed[disabled="true"] >a,
-i-link[button-style="true"].i-disabled >a:hover,
-i-link[button-style="true"][disabled="true"] >a:hover {
+i-link[button-style="true"].i-disabled >a >div,
+i-link[button-style="true"][disabled="true"] >a >div,
+i-link[button-style="true"].i-disabled >a:active >div,
+i-link[button-style="true"][disabled="true"] >a:active >div,
+i-link[button-style="true"].i-disabled >a.pure-a-active >div, /* need .pure-a-active for it gets set when "enter-pressed" on a */
+i-link[button-style="true"][disabled="true"] >a.pure-a-active >div,
+i-link[button-style="true"].i-disabled.i-active >a >div,
+i-link[button-style="true"].i-active[disabled="true"] >a >div,
+i-link[button-style="true"].i-disabled >a:focus >div,
+i-link[button-style="true"][disabled="true"] >a:focus >div,
+i-link[button-style="true"].i-disabled.focussed >a >div,
+i-link[button-style="true"].focussed[disabled="true"] >a >div,
+i-link[button-style="true"].i-disabled >a:hover >div,
+i-link[button-style="true"][disabled="true"] >a:hover >div {
     border: none;
     background-image: none;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -157,18 +165,18 @@ i-link[button-style="true"][disabled="true"] >a:hover {
     cursor: default;
 }
 
-i-link[button-style="true"].i-rounded >a {
+i-link[button-style="true"].i-rounded >a >div {
     border-radius: 0.3em;
 }
 
-i-link[button-style="true"].i-heavyrounded >a {
+i-link[button-style="true"].i-heavyrounded >a >div {
     border-radius: 0.5em;
 }
 
-i-link[button-style="true"].i-oval >a {
+i-link[button-style="true"].i-oval >a >div {
     border-radius: 50%;
 }
 
-i-link[button-style="true"].i-halfoval >a {
+i-link[button-style="true"].i-halfoval >a >div {
     border-radius: 25%;
 }

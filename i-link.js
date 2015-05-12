@@ -64,7 +64,12 @@ module.exports = function (window) {
                 var element = this,
                     model = element.model,
                     anchor = element.getElement('>a');
-                anchor.setHTML(model.content);
+                if (model['button-style']) {
+                    anchor.setHTML('<div>'+model.content+'</div>');
+                }
+                else {
+                    anchor.setHTML(model.content);
+                }
                 anchor.setAttr('href', model.href || '#');
                 if (model.target) {
                     anchor.setAttr('target', model.target);
